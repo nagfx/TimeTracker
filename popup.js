@@ -82,18 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleTimer(e) {
     const taskId = parseInt(e.currentTarget.getAttribute("data-id"));
     const task = tasks.find((t) => t.id === taskId);
-    task.isRunning = !task.isRunning;
-    saveTasks();
-    renderTasks();
 
-    if (task.isRunning) {
-      task.interval = setInterval(() => {
-        task.time++;
-        updateTaskTime(task);
-      }, 1000);
-    } else {
-      clearInterval(task.interval);
-    }
+    // Send message to background script to toggle timer
+    chrome.runtime.sendMessage({ action: "toggleTimer", taskId: taskId });
+
+    task.isRunning = !task.isRunning;
+    renderTasks();
   }
 
   // Function to delete a task
@@ -207,4 +201,15 @@ document.addEventListener("DOMContentLoaded", () => {
     URL.revokeObjectURL(url);
     dropdownContent.classList.remove("show");
   }
+
+  // Add this function to update task times
+  function updateTaskTimes() {
+    chrome.storage.sync.get(["tasks"], (result) => {
+      tasks = result.tasks || [];
+      renderTasks();
+    });
+  }
+
+  // Call updateTaskTimes every second
+  setInterval(updateTaskTimes, 1000);
 });
