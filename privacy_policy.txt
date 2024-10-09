@@ -1,0 +1,18 @@
+Privacy Policy for Task Tracker Pro Chrome Extension
+
+1. Information Collection and Use
+   Task Tracker Pro does not collect any personal information. All task data is stored locally in your browser using Chrome's storage API.
+
+2. Data Storage
+   Your tasks and time tracking data are stored locally on your device and are not transmitted to any external servers.
+
+3. Third-party Services
+   This extension does not use any third-party services or analytics tools.
+
+4. Changes to This Privacy Policy
+   We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+
+5. Contact Us
+   If you have any questions about this Privacy Policy, please contact us at namanshaheer@gmail.com.
+
+Last updated: [Current Date]

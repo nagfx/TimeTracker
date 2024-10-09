@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker Pro</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="icons/icon16.png"
+          alt="Task Tracker Icon"
+          class="header-icon"
+        />
+        <h1>Task Tracker Pro <span class="by-author">by Naman</span></h1>
+      </div>
+      <div class="add-task">
+        <input type="text" id="taskInput" placeholder="Enter a new task" />
+        <button id="addTask"><i class="fas fa-plus"></i></button>
+      </div>
+      <ul id="taskList"></ul>
+      <div class="button-container">
+        <button id="clearAll">
+          <i class="fas fa-trash-alt"></i> Clear All Tasks
+        </button>
+        <div class="dropdown">
+          <button id="exportButton">
+            <i class="fas fa-file-export"></i> Export
+          </button>
+          <div class="dropdown-content">
+            <button id="exportTxt">
+              <i class="fas fa-file-alt"></i> Export to TXT
+            </button>
+            <button id="exportExcel">
+              <i class="fas fa-file-excel"></i> Export to Excel
+            </button>
+          </div>
+        </div>
+        <button id="credits"><i class="fas fa-info-circle"></i> Credits</button>
+      </div>
+    </div>
+
+    <div id="creditsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Task Tracker Pro Chrome Extension v1.0</h2>
+          <span class="close">&times;</span>
+        </div>
+        <p>Created by: Naman Iqbal</p>
+        <p>
+          <i class="fas fa-envelope"></i> Email:
+          <a href="mailto:namanshaheer@gmail.com">namanshaheer@gmail.com</a>
+        </p>
+        <p>
+          <i class="fab fa-linkedin"></i> LinkedIn:
+          <a href="https://www.linkedin.com/in/naman-shaheer/" target="_blank"
+            >https://www.linkedin.com/in/naman-shaheer/</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-github"></i> GitHub:
+          <a href="https://github.com/nagfx" target="_blank">nagfx</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
