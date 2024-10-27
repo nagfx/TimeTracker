@@ -38,6 +38,7 @@ Icons provided by [UXWing](https://uxwing.com/)
 ## Version
 
 1.0
+Honestly I don't know how to make a better README.md file and assign version numbers...
 
 ## note!
 
