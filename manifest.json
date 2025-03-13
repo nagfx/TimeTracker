@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Task Tracker Pro",
-  "version": "1.0",
+  "version": "1.1.0",
   "description": "Track your tasks and time spent on each task",
   "action": {
     "default_popup": "popup.html",
