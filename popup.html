@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'self';">
     <title>Task Tracker Pro</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
@@ -17,16 +18,76 @@
   <body>
     <div class="container">
       <div class="header">
-        <img
-          src="icons/icon16.png"
-          alt="Task Tracker Icon"
-          class="header-icon"
-        />
-        <h1>Task Tracker Pro <span class="by-author">by Naman</span></h1>
+        <div class="header-left">
+          <img
+            src="icons/icon16.png"
+            alt="Task Tracker Icon"
+            class="header-icon"
+          />
+          <h1>Task Tracker Pro <span class="by-author">by Naman</span></h1>
+        </div>
+        <div class="header-controls">
+          <button id="settingsToggle" class="clickable-button icon-button" title="Settings" type="button">
+            <span class="button-content">
+              <i class="fas fa-cog"></i>
+            </span>
+          </button>
+          <div class="theme-toggle">
+            <button id="themeToggle" title="Toggle Dark/Light Mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+          <h3>Settings</h3>
+          <button class="close-settings">×</button>
+        </div>
+        <div class="theme-indicator">
+          Editing <span id="currentThemeText">Light</span> Mode Colors Buttons
+        </div>
+        <div class="color-picker">
+          <label for="primaryColor">Primary Color:</label>
+          <input type="color" id="primaryColor" value="#3498db">
+        </div>
+        <div class="color-picker">
+          <label for="secondaryColor">Secondary Color:</label>
+          <input type="color" id="secondaryColor" value="#e74c3c">
+        </div>
+        <button id="applyColors">Apply Colors</button>
+        <button id="resetColors">Reset to Default</button>
       </div>
       <div class="add-task">
         <input type="text" id="taskInput" placeholder="Enter a new task" />
+        <select id="taskCategory">
+          <option value="">No Category</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="study">Study</option>
+          <option value="health">Health</option>
+          <option value="other">Other</option>
+        </select>
         <button id="addTask"><i class="fas fa-plus"></i></button>
+      </div>
+      <div class="category-filter">
+        <label>Filter by category:</label>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="">No Category</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="study">Study</option>
+          <option value="health">Health</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="edit-info-tip">
+        <i class="fas fa-info-circle"></i> 
+        <span>Tip: Double-click task text to edit or category tag to change category</span>
+        <button class="close-tip" title="Close tip">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
       <ul id="taskList"></ul>
       <div class="button-container">
@@ -48,12 +109,15 @@
         </div>
         <button id="credits"><i class="fas fa-info-circle"></i> Credits</button>
       </div>
+      <div class="resize-handle">
+        <div class="resize-bar"></div>
+      </div>
     </div>
 
     <div id="creditsModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Task Tracker Pro Chrome Extension v1.0</h2>
+          <h2>Task Tracker Pro Chrome Extension v1.1.0</h2>
           <span class="close">&times;</span>
         </div>
         <p>Created by: Naman Iqbal</p>
