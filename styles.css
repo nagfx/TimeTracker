@@ -595,23 +595,29 @@ body.dark-mode .edit-info-tip .close-tip:hover {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+  backdrop-filter: blur(2px); /* Slight blur effect */
 }
 
 .modal-content {
-  background-color: var(--modal-bg);
-  margin: 15% auto;
+  background-color: var(--container-bg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   padding: 20px;
   border: 1px solid var(--input-border);
-  width: 90%; /* Adjust width to fit better */
-  max-height: 80%; /* Set a maximum height */
-  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px var(--task-shadow);
   transition: background-color 0.3s, border-color 0.3s;
 }
 
